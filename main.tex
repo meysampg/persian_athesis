@@ -1,0 +1,28 @@
+% برای جستن جزئیات این فایل، لطفا http://meysampg.blog.ir/post/38 را ببینید.
+
+% اضافه کردن دستورات و تنظیمات به فایل لاتک‌مان.
+\include{header}
+
+% شروع سند
+\begin{document}
+% چاپ فهرست مطالب
+\tableofcontent
+
+% هر فصل را در یک فایل با نامی مثل chapterxx ذخیره می‌کنیم و آنرا به فایل اضافه می‌کنیم.
+% افزودن فصل اول
+\include{chapter01}
+% افزودن فصل دوم
+\include{chapter02}
+
+% شروع ضمیمه‌ها
+\appendix
+% فراخوانی ضمیمه‌ی اول
+\include{appendix01}
+
+% تنظیم کردن چاپ مراجع با طبقه‌بندی اول انگلیسی‌ها، بعد فارسی‌ها
+\bibliographystyle{plain-fa}
+% افزودن فایل لیست مراجع
+\bibliography{ref}
+
+% پایان سند
+\end{document}
