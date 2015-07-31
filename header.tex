@@ -1,0 +1,124 @@
+% تعریف نوع سند برای نوشتن پایان‌نامه (گزارش در حالت کلی) و تعیین مقدار پیش‌فرض قلم در آن، به همراه دوطرفه بودن در ساخت فایل خروجی.
+\documentclass[11pt,twoside]{report}
+
+% افزودن سرآیندهای ams برای افزودن امکانات بیشتر ریاضی به لاتک
+% سرآیند برای افزودن محیط‌های بیشتر
+\usepackage{amsmath}
+% سرآیند فونت‌های ریاضی‌وار
+\usepackage{amsfonts}
+% سرآیند افزودن نمادهای ریاضی
+\usepackage{amssymb}
+% سرآیند برای افزودن امکان محیط‌های بیشتر (مثل تعریف، قضیه، یادآوری، لم و امثالهم)
+\usepackage{amsthm}
+
+% سرآیند برای دوستونه کردن پانویس‌ها
+\usepackage{dblfnote}
+
+% سرآیند برای اضافه کردن قابلیت تصویر چندستونه به همراه برچسب مجزا
+\usepackage{subcaption}
+
+% افزودن کلیک‌پذیری به فایل خروجی. برای مثال شماره‌ی فرمول‌ها رنگی می‌شوند و اگر در جایی به آن ارجاع داده شود، با کلیک بر روی شماره، فایل به محل فرمول می‌رود.
+\usepackage[colorlinks=true]{hyperref}
+
+% افزودن امکان تعریف بالانویس و پانویس نوشته به صورت دلخواه. برای مثال در صفحات زوج نام فصل باشد و در صفحات فرد، عنوان بخش.
+\usepackage{fancyhdr}
+
+% حاشیه‌گذاری سند. این اندازه‌ها بر اساس استاندارد مصوب دانشکده ریاضی دانشگاه خورزامی تهران می‌باشند. از دانشگاه به دانشگاه ممکن است این اندازه متفاوت باشند. اگر دانشگاه شما اندازه‌ی خاصی را اعمال نکرده است، از همین مقادیر استفاده کنید. عموما بهترین نمایش بر روی کاغذ در این اندازه حاصل خواهد شد.
+\usepackage[margin=2.5cm,right=3cm]{geometry} 
+
+% افزودن امکان وارد کردن کد به متن.
+\usepackage{listings}
+
+% افزودن رنگ‌های بیشتر به لاتک.
+\usepackage{color}
+
+% افزودن قابلیت مقایسه‌ی متن به لاتک. این بسته توسط بسته listings مورد استفاده قرار می‌گیرد.
+\usepackage{textcomp}
+
+% افزودن امکان دستکاری و ساخت فهرست مطالب.
+\usepackage{tocbasic}
+
+% افزودن امکان درج الگوریتم.
+\usepackage[linesnumbered]{algorithm2e}
+
+% افزودن امکان اتصال تصاویر برداری eps به سند.
+\usepackage{epsfig}
+
+% افزودن امکان فارسی‌نویسی به سند
+\usepackage{xepersian}
+
+% تعریف فونت پیش‌فرض برای سند. این فونت در پوشه‌ی fonts همین مجموعه ضمیمه می‌شود. اگر آن را بر روی سیستم نصب ندارید، ابتدا آنرا نصب کنید.
+\settextfont{XB Zar}
+
+% مشخص کردن فاصله‌ی خط‌ها از هم. این فاصله نیز بر مبنای استاندارد مصوب دانشکده ریاضی دانشگاه خوارزمی تهران است.
+\setlength{\baselineskip}{10mm}
+
+% اکانون محیط‌های ریاضی جدیدی را با استفاده از بسته‌ی amsthm افزوده شده در بالا تعریف می‌کنیم. شماره‌گذاری هر محیط بر اساس بخش (Section) است.
+\newtheorem{thm}{قضیه}[section]
+\newtheorem{lem}{لم}[section]
+\newtheorem{example}{مثال}[section]
+\newtheorem{corollary}{نتیجه}[section]
+\newtheorem{definition}{تعریف}[section]
+
+% تعریف محیط کد. ما این محیط را برای زبان متلب تعریف کرده‌ایم که به راحتی با تغییر پارامتر language در خطوط زیر می‌توان محیط را نیز تغییر داد. برای دیدن زبان‌های بیشتر لطفا https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings#Supported_languages را ببینید.
+\definecolor{listinggray}{gray}{0.9}
+\lstset{
+	tabsize=4,
+	rulecolor=,
+	language=matlab,
+    basicstyle=\scriptsize,
+    upquote=true,
+    aboveskip={1.5\baselineskip},
+    columns=fixed,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true,
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    identifierstyle=\ttfamily,
+    keywordstyle=\color[rgb]{0,0,1},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{0.627,0.126,0.941},
+    numbers=left, 
+    numberstyle=\tiny,
+    frame=l
+}
+
+% اضافه کردن لیست محیطی جدید code. لیست‌ همه‌ی محیط‌های استفاده شده را در بعد می‌توان با دستور \listofcodes نمایش داد.
+\DeclareNewTOC[
+  type=code,
+  types=codes,
+  float,
+  floattype=4,
+  name=کد,%
+  listname={لیست کدهای کامپیوتری}%
+]{lop}
+
+% این هم مثل بالایی :)).
+\DeclareNewTOC[
+  type=algo,
+  types=algos,
+  float,
+  floattype=4,
+  name=الگوریتم,
+  listname={لیست الگوریتم‌ها}%
+]{loa}
+
+% افزودن امکان خلاصه‌ی هر فصل در ابتدای هر فصل.
+\makeatletter
+\newenvironment{summary}
+               {%\begin{center}\textbf{خلاصه‌ی فصل}\end{center}
+                 \list{}{\listparindent 1em
+                        \itemindent\listparindent
+                        \rightmargin\leftmargin
+                        \parsep\z@ \@plus\p@}
+                \item\relax}
+               {\endlist}
+
+% تغییر نام فصل مراجع.
+\renewcommand{\bibname}{مراجع}
+
+% تعریف پوشه‌ی پیش‌فرض عکس‌ها. برای اینکه محیط کار الکی شلوغ پلوغ نشه.
+\graphicspath{{./images/}}
