@@ -10,4 +10,4 @@
  * Add list of codes,
  * Add sample for algorithm and table.
 ---
-For more information about this repository, please visit [this]() link.
+For more information about this repository, please visit [this](http://meysampg.blog.ir/post/38/) link.
