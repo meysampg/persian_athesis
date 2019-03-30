@@ -2,7 +2,7 @@
 A sample for create persian thesis, based on Kharazmi University of Tehran Standards.
 
 ### XePersian Support
-Feel free to use [this repository](https://github.com/persiantex/xepersian) for reporting problems or getting help in XePersian package.
+Feel free to use [this repository](https://github.com/vafa-ac/xepersian) for reporting problems or getting help in XePersian package.
 
 ### ToDo
  * Add index to thesis,
